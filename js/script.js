@@ -4,7 +4,8 @@ $(document).ready(function(){
 
   // Prende il valore dell'input e lo passa all'API
   $('#submit-item').click(function(){
-    addToList($('#input-item').val());
+    var inputItem = $('#input-item').val();
+    addToList(inputItem);
   });
 
   // Cancella l'item se schiaccio il bottone X
@@ -17,7 +18,7 @@ $(document).ready(function(){
   // Accetta: inputValue, stringa
   // Return: niente, stampa a schermo la lista aggiornata
   function addToList(inputItem){
-    if (inputItem > 0) {
+    if (inputItem.length > 0) {
       $.ajax(
         {
           url: 'http://157.230.17.132:3019/todos/',
@@ -90,6 +91,4 @@ $(document).ready(function(){
       }
     );
   }
-
-
 });
