@@ -28,7 +28,8 @@ $(document).ready(function(){
     var template = Handlebars.compile(source);
     for (var i = 0; i < arrayList.length; i++) {
       context = {
-        listItem: arrayList[i].text
+        listItem: arrayList[i].text,
+        itemId: arrayList[i].id
       };
       var html = template(context);
       $('.todo-list').append(html);
